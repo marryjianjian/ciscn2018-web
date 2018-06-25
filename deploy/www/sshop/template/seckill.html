@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h2>秒杀活动</h2>
+        {% if vip %}
+            <img src={{ static_url('vip.jpg') }}
+        {% end %}
+        <br><br>
+        <form action="" method="post">
+            {% raw xsrf_form_html() %}
+            <input class="hidden" name="id" value="{{ cid }}">
+            <button class="btn btn-danger" type="submit">秒杀</button>
+        </form>
+    </div>
+{% end %}
